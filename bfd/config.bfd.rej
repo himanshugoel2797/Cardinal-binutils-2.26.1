@@ -1,0 +1,14 @@
+--- config.bfd	2015-11-13 02:27:40.000000000 -0600
++++ config.bfd	2016-07-30 19:27:01.466979676 -0600
+@@ -262,6 +262,11 @@
+     targ_selvecs="sparc_elf32_vec sparc_aout_sunos_be_vec"
+     want64=true
+     ;;
++  x86_64-*-cardinal*)
++    targ_defvec=x86_64_elf64_vec
++    targ_selvecs=
++    want64=true
++    ;;
+ #endif /* BFD64 */
+ 
+   am34-*-linux* | am33_2.0-*-linux*)

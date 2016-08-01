@@ -1,0 +1,4 @@
+. ${srcdir}/emulparams/elf_x86_64.sh
+GENERATE_SHLIB_SCRIPT=yes
+GENERATE_PIE_SCRIPT=yes
+TEXT_START_ADDR=0x400000

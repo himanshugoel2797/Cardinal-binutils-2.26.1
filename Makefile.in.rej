@@ -1,0 +1,29 @@
+--- Makefile.in	2015-11-13 02:27:42.000000000 -0600
++++ Makefile.in	2016-07-30 19:22:48.692353428 -0600
+@@ -829,6 +829,7 @@
+ 	eelf_x86_64_fbsd.c \
+ 	eelf_x86_64_nacl.c \
+ 	eelf_x86_64_sol2.c \
++	eelf_x86_64_myos.c \
+ 	ehppa64linux.c \
+ 	ei386pep.c \
+ 	emmo.c \
+@@ -1299,6 +1300,7 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf_x86_64.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf_x86_64_cloudabi.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf_x86_64_fbsd.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf_x86_64_myos.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf_x86_64_nacl.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eelf_x86_64_sol2.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/egld960.Po@am__quote@
+@@ -3493,6 +3495,10 @@
+ eelf_x86_64.c: $(srcdir)/emulparams/elf_x86_64.sh \
+   $(ELF_DEPS) $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
+ 
++eelf_x86_64_cardinal.c: $(srcdir)/emulparams/elf_x86_64_cardinal.sh \
++  $(ELF_DEPS) $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
++	${GENSCRIPTS} elf_x86_64_cardinal "$(tdir_elf_x86_64_cardinal)"
++
+ eelf_x86_64_cloudabi.c: $(srcdir)/emulparams/elf_x86_64_cloudabi.sh \
+   $(srcdir)/emulparams/elf_x86_64.sh \
+   $(ELF_DEPS) $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
